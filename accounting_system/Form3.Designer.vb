@@ -32,14 +32,16 @@ Partial Class Form3
         user_selections = New ListBox()
         Label3 = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        Vattxt = New TextBox()
+        discounttxt = New TextBox()
         Label4 = New Label()
         Label5 = New Label()
         TextBox3 = New TextBox()
         Total_Pricetxt = New TextBox()
         Label6 = New Label()
         Display_btn = New Button()
+        xit = New Button()
+        Clearall = New Button()
         SuspendLayout()
         ' 
         ' group_a
@@ -83,7 +85,7 @@ Partial Class Form3
         ' 
         additembtn.Location = New Point(35, 308)
         additembtn.Name = "additembtn"
-        additembtn.Size = New Size(128, 29)
+        additembtn.Size = New Size(191, 29)
         additembtn.TabIndex = 4
         additembtn.Text = "Add Item"
         additembtn.UseVisualStyleBackColor = True
@@ -92,7 +94,7 @@ Partial Class Form3
         ' 
         removeitembtn.Location = New Point(35, 354)
         removeitembtn.Name = "removeitembtn"
-        removeitembtn.Size = New Size(128, 29)
+        removeitembtn.Size = New Size(191, 29)
         removeitembtn.TabIndex = 5
         removeitembtn.Text = "Remove Item"
         removeitembtn.UseVisualStyleBackColor = True
@@ -120,19 +122,19 @@ Partial Class Form3
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
         ' 
-        ' TextBox1
+        ' Vattxt
         ' 
-        TextBox1.Location = New Point(488, 247)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(125, 27)
-        TextBox1.TabIndex = 9
+        Vattxt.Location = New Point(488, 247)
+        Vattxt.Name = "Vattxt"
+        Vattxt.Size = New Size(125, 27)
+        Vattxt.TabIndex = 9
         ' 
-        ' TextBox2
+        ' discounttxt
         ' 
-        TextBox2.Location = New Point(488, 298)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(125, 27)
-        TextBox2.TabIndex = 10
+        discounttxt.Location = New Point(488, 298)
+        discounttxt.Name = "discounttxt"
+        discounttxt.Size = New Size(125, 27)
+        discounttxt.TabIndex = 10
         ' 
         ' Label4
         ' 
@@ -179,24 +181,44 @@ Partial Class Form3
         ' 
         Display_btn.Location = New Point(35, 392)
         Display_btn.Name = "Display_btn"
-        Display_btn.Size = New Size(128, 29)
+        Display_btn.Size = New Size(191, 29)
         Display_btn.TabIndex = 16
-        Display_btn.Text = "Display"
+        Display_btn.Text = "Display Promotion"
         Display_btn.UseVisualStyleBackColor = True
+        ' 
+        ' xit
+        ' 
+        xit.Location = New Point(299, 24)
+        xit.Name = "xit"
+        xit.Size = New Size(104, 53)
+        xit.TabIndex = 20
+        xit.Text = "EXIT"
+        xit.UseVisualStyleBackColor = True
+        ' 
+        ' Clearall
+        ' 
+        Clearall.Location = New Point(299, 95)
+        Clearall.Name = "Clearall"
+        Clearall.Size = New Size(94, 29)
+        Clearall.TabIndex = 21
+        Clearall.Text = "Clear all"
+        Clearall.UseVisualStyleBackColor = True
         ' 
         ' Form3
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Clearall)
+        Controls.Add(xit)
         Controls.Add(Display_btn)
         Controls.Add(Label6)
         Controls.Add(Total_Pricetxt)
         Controls.Add(TextBox3)
         Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(discounttxt)
+        Controls.Add(Vattxt)
         Controls.Add(Label3)
         Controls.Add(user_selections)
         Controls.Add(removeitembtn)
@@ -220,12 +242,14 @@ Partial Class Form3
     Friend WithEvents user_selections As ListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Vattxt As TextBox
+    Friend WithEvents discounttxt As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Total_Pricetxt As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Display_btn As Button
+    Friend WithEvents xit As Button
+    Friend WithEvents Clearall As Button
 End Class

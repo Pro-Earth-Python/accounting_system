@@ -28,7 +28,7 @@
     End Sub
 
     Private Sub removeitembtn_Click(sender As Object, e As EventArgs) Handles removeitembtn.Click
-        If user_selections.SelectedIndex <> -1 Then
+        If user_selections.SelectedIndex <> -1 Then ' user selections is group c 
             ' Remove the selected item
             selectedItems.Remove(user_selections.SelectedItem.ToString())
             user_selections.Items.RemoveAt(user_selections.SelectedIndex)
@@ -56,9 +56,6 @@
         }
         For Each vp As KeyValuePair(Of String, Double) In group_b_pricelist
             group_b.Items.Add(vp.Key)
-
-
-
         Next
     End Sub
 
@@ -70,6 +67,7 @@
     Private Sub user_selections_SelectedIndexChanged(sender As Object, e As EventArgs) Handles user_selections.SelectedIndexChanged
         ' Logic for user selections
     End Sub
+
     Private Function CalculateTotal() As Decimal
         Dim total As Decimal = 0
         For Each item As String In selectedItems
@@ -78,31 +76,29 @@
 
             If Decimal.TryParse(priceString, price) Then
                 total += price
+            Else
+                MessageBox.Show($"Failed to parse price: {priceString}")
             End If
         Next
         Return total
-        'Dim total As Decimal = 0
-        'For Each item As String In selectedItems
-        '    Dim priceString As String = item.Split("-"c)(1).Trim().Replace("R", "")
-        '    Dim price As Decimal
-
-        '    'Dim price As Decimal = Decimal.Parse(priceString)
-
-
-
-
-        '    priceString = Decimal.TryParse(priceString, price)
-
-        '    priceString += total
-        '    End If
-        '    priceString += total
-
-        'Next
-        'Return total
-
     End Function
 
+    'Display must show the combo options 
     Private Sub Display_btn_Click(sender As Object, e As EventArgs) Handles Display_btn.Click
-        Total_Pricetxt.Text = CalculateTotal().ToString("C")
+        MessageBox.Show("Promotional Prices are as follows")
+
+    End Sub
+
+    'The code for exiting the program
+    Private Sub xit_Click(sender As Object, e As EventArgs) Handles xit.Click
+
+        Me.Close()
+
+    End Sub
+    'Code for clearing all the items in the listbox
+    Private Sub Clearall_Click(sender As Object, e As EventArgs) Handles Clearall.Click
+        user_selections.Items.Clear()
+        selectedItems.Clear()
+
     End Sub
 End Class
